@@ -1,33 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <title>English Quizz</title>
 </head>
+
 <body>
     <div class="app">
         <tr>
-            <td><h1>English Quizz</h1></td>
-            <td><div class="theme-switch-wrapper">
-                <label class="theme-switch" for="checkbox">
-             <input type="checkbox" id="checkbox" />
-             <div class="slider round"></div>
-           </label>
-             <em>Enable Dark Mode!</em>
-           </div>
-         </td>
+            <td>
+                <h1>English Quizz</h1>
+            </td>
+            <!-- <td>
+                <div class="theme-switch-wrapper">
+                    <label class="theme-switch" for="checkbox">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="slider round"></div>
+                    </label>
+                    <em>Enable Dark Mode!</em>
+                </div>
+            </td> -->
         </tr>
         <div class="quiz">
             <h2 id="question">question</h2>
-        <div id="answer-button">
-            <!-- Otomatis generate jawaban -->
+            <div id="answer-button">
+                <!-- Otomatis generate jawaban -->
+            </div>
+            <button id="next-btn">Next</button>
         </div>
-        <button id="next-btn">Next</button>
-    </div>
 
-    <!-- <script src="/app/logic/soal.js"></script> -->
-    <script src="logic/app.js"></script>
+        <!-- <script src="/app/logic/soal.js"></script> -->
+        <script src="logic/app.js"></script>
 </body>
+
 </html>
