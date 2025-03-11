@@ -53,7 +53,6 @@ function selectAnswer(e) {
         selected_btn.classList.add("salah");
     }
 
-    // Tampilkan semua jawaban yang benar
     Array.from(answer_btn.children).forEach(button => {
         if (button.dataset.correct === "true") {
             button.classList.add("benar");
@@ -61,11 +60,13 @@ function selectAnswer(e) {
         button.disabled = true;
     });
 
-    // Tampilkan penjelasan
     explanation_element.innerHTML = `<strong>Penjelasan:</strong> ${currentQuestion.explanation}`;
+    explanation_element.style.display = "block"; 
+    explanation_element.classList.add("fade-in"); 
 
     next_btn.style.display = "block";
 }
+
 
 function showScore() {
     resetState();
