@@ -3,7 +3,7 @@ import { QUESTION } from "./soal.js";
 const question_element = document.getElementById("question");
 const answer_btn = document.getElementById("answer-button");
 const next_btn = document.getElementById("next-btn");
-const explanation_element = document.getElementById("explanation"); // Tambahkan elemen untuk penjelasan
+const explanation_element = document.getElementById("explanation"); 
 
 let currentQuestionIndex = 0;
 let questionNo = 1;
@@ -13,13 +13,23 @@ function startQuiz() {
     currentQuestionIndex = 0;
     score = 0;
     next_btn.innerHTML = "Next";
+    shuffleArray(QUESTION);
     showQuestion();
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]]; 
+    }
 }
 
 function showQuestion() {
     resetState();
     let currentQuestion = QUESTION[currentQuestionIndex];
+
     question_element.innerHTML = questionNo++ + ". " + currentQuestion.question;
+    shuffleArray(currentQuestion.answer);
 
     currentQuestion.answer.forEach(answer => {
         const button = document.createElement("button");
@@ -32,6 +42,7 @@ function showQuestion() {
         button.addEventListener("click", selectAnswer);
     });
 }
+
 
 function resetState() {
     next_btn.style.display = "none";
